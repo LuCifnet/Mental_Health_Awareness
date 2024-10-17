@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css" />
+    <script src="/js/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <div class="form-container log-in-container">
+        <form id="loginForm" action="#" onsubmit="return validateForm()">
+            <h1>Login</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fa fa-facebook fa-2x"></i></a>
+                <a href="#" class="social"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+            <span>or use your account</span>
+            <div class="input-group">
+                <i class="fas fa-envelope input-icon"></i>
+                <input type="email" placeholder="Email" id="email" required />
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" placeholder="Password" id="password" required />
+            </div>
+            <a href="#">Forgot your password?</a>
+            <button type="submit">Log In</button>
+        </form>
+        <div class="create-account">
+            <span>Don't have an account? <a href="#">Create one</a></span>
+        </div>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-right">
+                <h1>HTML CSS Login Form</h1>
+                <p>
+                    Facebook login page Clone using HTML and CSS.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

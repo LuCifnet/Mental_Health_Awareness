@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> Resources</a></li>
+                <li><a href="#"><i class="fas fa-hands-helping"></i> Support Services</a></li>
+                <li><a href="#"><i class="fas fa-heart"></i> Self-Assessment</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> Community</a></li>
+                <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="/html/login.html" class="sign-in">Sign In</a>
+            <a href="#" class="sign-up">Sign Up</a>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <img src="/images/sit.png" alt="A calming image related to mental health" class="hero-image">
+                <div class="quote-box">
+                    <p class="quote">"Your mental health is a priority. Your happiness is essential. Your self-care is a necessity."</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mood-tracker">
+            <h2>How Are You Feeling Today?</h2>
+            <div class="mood-options">
+                <button aria-label="Feeling happy">😊</button>
+                <button aria-label="Feeling neutral">😐</button>
+                <button aria-label="Feeling sad">😢</button>
+                <button aria-label="Feeling angry">😠</button>
+                <button aria-label="Feeling sleepy">😴</button>
+            </div>
+        </section>
+        
+        <section class="mental-health-section">
+            <div class="container">
+                <div class="image-placeholder">
+                    <img src="/images/mental-health-7323725_1280.png" alt="Illustration related to mental health">
+                </div>
+                <div class="text-section">
+                    <h1>You Deserve to be Mentally Healthy</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquet habitasse nunc elementum mattis est neque ipsum. Varius aliquet dignissim.</p>
+                    <a href="#" class="button">Get Started</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section-container">
+            <h2>Common Mental Health Issues</h2>
+            <div class="issues-cards">
+                <div class="issue-card">
+                    <img src="/images/depression1.png" alt="Depression illustration">
+                    <p>Depression</p>
+                </div>
+                <div class="issue-card">
+                    <img src="/images/OCID.png" alt="Obsessive-Compulsive Disorder illustration">
+                    <p>Obsessive-Compulsive Disorder</p>
+                </div>
+                <div class="issue-card">
+                    <img src="/images/anxiety.png" alt="Anxiety illustration">
+                    <p>Anxiety</p>
+                </div>
+            </div>
+        
+            <div class="navigation-buttons">
+                <button class="prev-btn" onclick="changeIssue(-1)" aria-label="Previous issue">←</button>
+                <button class="next-btn" onclick="changeIssue(1)" aria-label="Next issue">→</button>
+            </div>
+        </section>
+        
+        <section class="quiz-section">
+            <h2>Quizzes to Discover Your True Self</h2>
+            <p>Our free quiz can help you take a proactive approach to your mental health and wellness!</p>
+            
+            <div class="quiz-cards">
+                <div class="quiz-card">
+                    <img src="/images/Are-You-Ready-For-a-Relationship-icon.png" alt="Are You Ready For a Relationship? Quiz">
+                    <p>Are You Ready For a Relationship? | Fun & Free Quiz</p>
+                </div>
+                <div class="quiz-card">
+                    <img src="/images/Take-The-ACES-Quiz-icon.png" alt="The ACE Quiz">
+                    <p>The ACE Quiz: Did You Experience Childhood Trauma?</p>
+                </div>
+                <div class="quiz-card">
+                    <img src="/images/Are-You-Ready-For-a-Relationship-icon.png" alt="Love Language Quiz">
+                    <p>What’s My Love Language? | 5 Love Languages Quiz</p>
+                </div>
+                <div class="quiz-card">
+                    <img src="/images/Loneliness-01-01.png" alt="Am I Lonely? Quiz">
+                    <p>Am I Lonely? Take Our Loneliness Test to Find Out!</p>
+                </div>
+            </div>
+        
+            <div class="quiz-navigation">
+                <button class="prev-btn" aria-label="Previous quiz">←</button>
+                <button class="next-btn" aria-label="Next quiz">→</button>
+            </div>
+        
+            <button class="take-more-btn">Take More Quizzes</button>
+        </section>
+        
+    </main>
+</body>
+</html>
