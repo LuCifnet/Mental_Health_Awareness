@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Health</title>
     <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
 </head>
+
 <body>
     <header>
         <div class="logo">
-            <h1>Logo</h1>
+            <!-- Consider adding a descriptive text for accessibility and SEO -->
+            <img src="/images/Inner Calm (1).png" alt="Inner Calm Logo" class="logo-img">
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#" class="active"><i class="fas fa-home"> </i>Home</a></li>
                 <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
                 <li><a href="#"><i class="fas fa-book"></i> Resources</a></li>
                 <li><a href="#"><i class="fas fa-hands-helping"></i> Support Services</a></li>
@@ -28,17 +33,18 @@
             <a href="#" class="sign-up">Sign Up</a>
         </div>
     </header>
-    
+
     <main>
         <section class="hero">
             <div class="hero-content">
                 <img src="/images/sit.png" alt="A calming image related to mental health" class="hero-image">
                 <div class="quote-box">
-                    <p class="quote">"Your mental health is a priority. Your happiness is essential. Your self-care is a necessity."</p>
+                    <p class="quote">"Your mental health is a priority. Your happiness is essential. Your self-care is a
+                        necessity."</p>
                 </div>
             </div>
         </section>
-        
+
         <section class="mood-tracker">
             <h2>How Are You Feeling Today?</h2>
             <div class="mood-options">
@@ -49,7 +55,7 @@
                 <button aria-label="Feeling sleepy">😴</button>
             </div>
         </section>
-        
+
         <section class="mental-health-section">
             <div class="container">
                 <div class="image-placeholder">
@@ -57,12 +63,13 @@
                 </div>
                 <div class="text-section">
                     <h1>You Deserve to be Mentally Healthy</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquet habitasse nunc elementum mattis est neque ipsum. Varius aliquet dignissim.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquet habitasse nunc elementum
+                        mattis est neque ipsum. Varius aliquet dignissim.</p>
                     <a href="#" class="button">Get Started</a>
                 </div>
             </div>
         </section>
-        
+
         <section class="section-container">
             <h2>Common Mental Health Issues</h2>
             <div class="issues-cards">
@@ -79,20 +86,21 @@
                     <p>Anxiety</p>
                 </div>
             </div>
-        
+
             <div class="navigation-buttons">
-                <button class="prev-btn" onclick="changeIssue(-1)" aria-label="Previous issue">←</button>
-                <button class="next-btn" onclick="changeIssue(1)" aria-label="Next issue">→</button>
+                <button class="prev-btn" aria-label="Previous issue">←</button>
+                <button class="next-btn" aria-label="Next issue">→</button>
             </div>
         </section>
-        
+
         <section class="quiz-section">
             <h2>Quizzes to Discover Your True Self</h2>
             <p>Our free quiz can help you take a proactive approach to your mental health and wellness!</p>
-            
+
             <div class="quiz-cards">
                 <div class="quiz-card">
-                    <img src="/images/Are-You-Ready-For-a-Relationship-icon.png" alt="Are You Ready For a Relationship? Quiz">
+                    <img src="/images/Are-You-Ready-For-a-Relationship-icon.png"
+                        alt="Are You Ready For a Relationship? Quiz">
                     <p>Are You Ready For a Relationship? | Fun & Free Quiz</p>
                 </div>
                 <div class="quiz-card">
@@ -108,15 +116,160 @@
                     <p>Am I Lonely? Take Our Loneliness Test to Find Out!</p>
                 </div>
             </div>
-        
+
             <div class="quiz-navigation">
                 <button class="prev-btn" aria-label="Previous quiz">←</button>
                 <button class="next-btn" aria-label="Next quiz">→</button>
             </div>
-        
+
             <button class="take-more-btn">Take More Quizzes</button>
         </section>
-        
-    </main>
+
+
+
+
+        <div class="wrapper">
+            <h1>Empowering Minds: Our Mental Health Consulting Services</h1>
+            <div class="services">
+                <div class="service">
+                    <img src="/images/happy-children-playing-and-laughing-concept-for-ki-2022-11-10-18-37-53-utc.jpg"
+                        alt="Children Service">
+                    <h2>Children Service</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur. Convallis est urna adipiscing fringilla nulla.</p>
+                    <button>See Detail</button>
+                </div>
+                <div class="service">
+                    <img src="/images/service-detail.jpg" alt="Mental Counseling">
+                    <h2>Mental Counseling</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur. Convallis est urna adipiscing fringilla nulla.</p>
+                    <button>See Detail</button>
+                </div>
+            </div>
+
+
+
+
+            <section class="stories-section">
+                <h2 class="section-title">Stories of HOPE</h2>
+                <p class="section-description">
+                    Sharing is caring! Encourage and inspire others with your stories. Your experiences can give them
+                    the courage to face their fears, overcome their struggles, and come out stronger.
+                </p>
+
+                <div class="story-thumbnails">
+                    <div class="story-card">
+                        <img src="/images/story1.jpg" alt="Story Thumbnail 1">
+                        <button>Read Story</button>
+                    </div>
+                    <div class="story-card">
+                        <img src="/images/story2.jpg" alt="Story Thumbnail 2">
+                        <button>Read Story</button>
+                    </div>
+                    <div class="story-card">
+                        <img src="/images/story3.jpg" alt="Story Thumbnail 3">
+                        <button>Read Story</button>
+                    </div>
+                </div>
+            </section>
+
+
+            <main>
+                <!-- Call to Action Section -->
+                <div class="container">
+                    <div class="illustration">
+                        <img src="/images/love_to_hear.png" alt="Illustration of people on a couch">
+                    </div>
+                    <div class="text-section">
+                        <h1>We Love to Hear Your Story</h1>
+                        <p>Motivate and uplift others through your stories. Your personal narratives can become a beacon
+                            of hope, resilience, and courage in the twilight of stormy seas and inspire them to come out
+                            stronger and braver.</p>
+                        <button>Write Your story</button>
+                    </div>
+                </div>
+
+                <!-- Therapy Resources Section -->
+                <section class="therapy-resources">
+                    <h2>Therapy Resources</h2>
+                    <p>Calm Sage aims to provide therapy resources to help you find effective solutions to mental health
+                        struggles such as anxiety, depression, stress, and more. Help is just a click away!</p>
+
+                    <!-- Resource Grid with Images -->
+                    <div class="resource-grid">
+                        <div class="resource-card">
+                            <img src="/images/therapy1.jpg" alt="Resource 1" class="resource-image">
+                            <p>Resource 1</p>
+                        </div>
+                        <div class="resource-card">
+                            <img src="/images/therapy2.webp" alt="Resource 2" class="resource-image">
+                            <p>Resource 2</p>
+                        </div>
+                        <div class="resource-card">
+                            <img src="/images/ther3.png" alt="Resource 3" class="resource-image">
+                            <p>Resource 3</p>
+                        </div>
+                        <div class="resource-card">
+                            <img src="/images/ther4.jpg" alt="Resource 4" class="resource-image">
+                            <p>Resource 4</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer>
+                    <div class="footer-content">
+                        <div class="footer-section logo">
+                            <h3>Logo</h3>
+                            <p>Our vision is to provide convenience and help increase your sales business.</p>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="footer-section about">
+                            <h3>About</h3>
+                            <ul>
+                                <li><a href="#">How it works</a></li>
+                                <li><a href="#">Featured</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section contact">
+                            <h3>Contact Us</h3>
+                            <ul>
+                                <li>+977865555547</li>
+                                <li>Kathmandu</li>
+                                <li>Kapil12@gmail.com</li>
+                            </ul>
+                        </div>
+                        <div class="footer-section community">
+                            <h3>Community</h3>
+                            <ul>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section socials">
+                            <h3>Socials</h3>
+                            <ul>
+                                <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section links">
+                            <h3>Essential Links</h3>
+                            <ul>
+                                <li><a href="#"><i class="fas fa-user-shield"></i> Privacy Policy</a></li>
+                                <li><a href="#"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>©2022 Company Name. All rights reserved</p>
+                    </div>
+                </footer>
+
+            </main>
 </body>
+
 </html>

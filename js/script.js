@@ -84,7 +84,7 @@ getStartedButton.addEventListener('mouseleave', function() {
 
 
 
-let currentIndex = 0;
+currentIndex = 0;
 
 // Function to change displayed issues (not necessary for the current setup but included for future use)
 function changeIssue(n) {
@@ -107,3 +107,79 @@ function changeIssue(n) {
 // Initialize the display (to show all at once, this part is not needed)
 document.querySelectorAll('.issue-card').forEach(card => card.style.display = 'block');
 
+
+
+const slides = document.querySelectorAll('.slide');
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+const dotsContainer = document.querySelector('.dots');
+let currentIndex = 0;
+let slideInterval;
+
+// Create dots
+slides.forEach((_, index) => {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    dot.addEventListener('click', () => goToSlide(index));
+    dotsContainer.appendChild(dot);
+});
+
+// Update dots
+function updateDots() {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+    });
+}
+
+// Show the current slide
+function showSlide(index) {
+    const totalSlides = slides.length;
+    currentIndex = (index + totalSlides) % totalSlides; // Loop around
+    const offset = -currentIndex * 100;
+    document.querySelector('.slider').style.transform = `translateX(${offset}%)`;
+    updateDots();
+}
+
+// Go to the next slide
+function nextSlide() {
+    showSlide(currentIndex + 1);
+}
+
+// Go to the previous slide
+function prevSlide() {
+    showSlide(currentIndex - 1);
+}
+
+// Go to a specific slide
+function goToSlide(index) {
+    showSlide(index);
+}
+
+// Auto slide functionality
+function startSlideShow() {
+    slideInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
+}
+
+// Stop the slide show on hover
+function stopSlideShow() {
+    clearInterval(slideInterval);
+}
+
+// Event listeners
+nextButton.addEventListener('click', () => {
+    nextSlide();
+    stopSlideShow();
+    startSlideShow();
+});
+
+prevButton.addEventListener('click', () => {
+    prevSlide();
+    stopSlideShow();
+    startSlideShow();
+});
+
+// Initialize
+showSlide(currentIndex);
+updateDots();
+startSlideShow();
