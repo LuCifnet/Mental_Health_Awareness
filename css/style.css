@@ -1,3 +1,4 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -27,63 +28,44 @@ header {
     transition: background-color 0.3s ease;
 }
 
-header:hover {
-    background-color: #f0f0f0;
-}
+
 
 /* Logo styling */
-.logo {
-    display: flex;
-    align-items: center;
-}
-
 .logo img {
-    width: 180px; /* Adjusted for balance */
+    width: 100px; /* Reduced the size */
     height: auto;
+    margin-left: 20px; /* Adds space from the left edge */
 }
 
 /* Navbar styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Adds padding to push items closer */
+}
+
 nav ul {
     list-style: none;
     display: flex;
-    gap: 50px; /* Increased for better spacing */
+    gap: 30px; /* Reduced gap */
     justify-content: center;
     align-items: center;
     padding: 0;
-}
-
-nav ul li {
-    display: flex;
-    align-items: center;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Adds some space between icons and text */
-    padding: 12px 20px;
+    font-size: 1.2rem;
+    padding: 10px 15px;
     border-radius: 4px;
     transition: all 0.3s ease;
     position: relative;
 }
 
-/* Add an underline effect for the active link */
-nav ul li a.active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #218838;
-    transform: scaleX(1);
-    transition: transform 0.3s ease;
-}
-
+nav ul li a.active::after,
 nav ul li a:hover::after {
     content: '';
     position: absolute;
@@ -93,26 +75,17 @@ nav ul li a:hover::after {
     height: 2px;
     background-color: #218838;
     transform: scaleX(1);
-}
-
-nav ul li a::after {
-    transform: scaleX(0); /* Hidden initially */
     transition: transform 0.3s ease;
 }
 
-/* Hover state */
-nav ul li a:hover {
-    color: #218838; /* Blue text on hover */
-}
-
-/* Button styling */
+/* Auth buttons */
 .sign-buttons {
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
 
 .sign-buttons a {
-    padding: 12px 25px;
+    padding: 10px 20px;
     font-weight: 600;
     border-radius: 4px;
     border: 2px solid #007BFF;
@@ -126,7 +99,6 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
-/* Sign Up Button */
 .sign-buttons .sign-up {
     background-color: #333;
     color: #fff;
@@ -136,15 +108,56 @@ nav ul li a:hover {
     background-color: #555;
 }
 
-/* Responsive Design */
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger 'close' icon style */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
     nav ul {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         gap: 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
     }
 
-    header {
-        padding: 20px 5%;
+    nav ul.show {
+        transform: translateX(0); /* Show the menu when 'show' is added */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger menu on mobile */
     }
 
     .sign-buttons {
@@ -152,6 +165,7 @@ nav ul li a:hover {
         gap: 10px;
     }
 }
+
 
 
 
@@ -222,8 +236,9 @@ main {
 }
 
 .hero-image {
-    width: 100vw;
-    height: 70vh;
+    width: 100%;
+    height: auto; /* Make height auto for responsive scaling */
+    min-height: 70vh; /* Set a minimum height for larger screens */
     object-fit: cover;
     border-radius: 0;
     transform-origin: center center;
@@ -237,6 +252,11 @@ main {
     100% {
         transform: scale(1.05);
     }
+}
+
+.hero {
+    position: relative; /* Ensure positioning context for ::before and quote-box */
+    overflow: hidden; /* Hide overflow for the hero */
 }
 
 .hero::before {
@@ -256,18 +276,29 @@ main {
     transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.1);
-    padding: 40px;
+    padding: 20px; /* Adjust padding for mobile */
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+    max-width: 90%; /* Limit width on small screens */
 }
 
 .quote {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Adjust font size for mobile */
     margin: 0;
     font-family: 'Georgia', serif;
     font-weight: bold;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .quote {
+        font-size: 1.5rem; /* Further reduce font size for smaller screens */
+    }
+
+    .quote-box {
+        padding: 15px; /* Reduce padding on mobile */
+    }
 }
 
 /* Mood Tracker Section */
@@ -325,6 +356,35 @@ main {
     transform: scale(1.05);
 }
 
+/* Mood Message Styles */
+.mood-message {
+    margin-top: 20px; /* Space between the buttons and the message */
+    padding: 15px; /* Padding around the message */
+    font-size: 1.6rem; /* Font size for the message */
+    color: #333; /* Text color */
+    background-color: #e2f0d9; /* Light green background for positive mood */
+    border: 1px solid #c3e6cb; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Change background color based on mood */
+.mood-message.positive {
+    background-color: #d4edda; /* Light green for positive messages */
+    border-color: #c3e6cb; /* Border for positive messages */
+}
+
+.mood-message.neutral {
+    background-color: #fefefe; /* Light gray for neutral messages */
+    border-color: #ddd; /* Border for neutral messages */
+}
+
+.mood-message.negative {
+    background-color: #f8d7da; /* Light red for negative messages */
+    border-color: #f5c6cb; /* Border for negative messages */
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .mood-tracker {
@@ -349,18 +409,18 @@ main {
     }
 }
 
+
 /* General section styling */
 .mental-health-section {
-    /* background-color: #f7f9fc; */
-    padding: 10px 10px;
+    padding: 20px;
     border-radius: 12px;
-    max-width: 100vw;
+    max-width: 100%;
     margin: 20px auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .container {
@@ -371,26 +431,31 @@ main {
 }
 
 .image-placeholder {
-    background-color: #e0e7ef;
     width: 420px;
     height: 320px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); */
+    overflow: hidden; /* Added for better image handling */
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .image-placeholder:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05) rotate(2deg); /* Added rotation for a more dynamic effect */
+    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25); */
 }
 
 .image-placeholder img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    transition: transform 0.4s ease; /* Image zoom on hover */
+}
+
+.image-placeholder:hover img {
+    transform: scale(1.1); /* Image zoom on hover */
 }
 
 .text-section {
@@ -400,7 +465,7 @@ main {
 
 .text-section h1 {
     font-size: 2.4rem;
-    font-weight: 600;
+    font-weight: 700; /* Bolder font weight for better visibility */
     color: #333;
     margin-bottom: 25px;
     line-height: 1.3;
@@ -424,19 +489,41 @@ main {
     border-radius: 50px;
     text-decoration: none;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative; /* Added for the ripple effect */
+    overflow: hidden; /* Added for the ripple effect */
 }
 
 .button:hover {
     background-color: #218838;
-    box-shadow:  0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transform: translateY(-3px);
 }
 
+/* Ripple effect */
 .button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    z-index: 0; /* Behind the button text */
+}
+
+.button:hover::after {
+    transform: translate(-50%, -50%) scale(1); /* Show ripple effect on hover */
+}
+
+.button::before {
     content: "→";
     padding-left: 12px;
     font-weight: bold;
     color: #fff;
+    z-index: 1; /* On top of ripple */
 }
 
 /* Media query for responsiveness */
@@ -518,6 +605,7 @@ main {
         font-size: 1rem;
     }
 }
+
 
 /* Section Container */
 .section-container {
@@ -782,10 +870,6 @@ h1 {
 
 
 
-
-
-
-
 /* General section styles */
 .stories-section {
     text-align: center;
@@ -838,7 +922,7 @@ h1 {
 
 .story-card img {
     width: 100%;
-    height: 240px; /* Set a larger image height */
+    height: 300px; /* Set a larger image height */
     object-fit: cover; /* Ensures the image covers the area */
     transition: transform 0.4s ease;
     border-top-left-radius: 15px;
@@ -848,6 +932,21 @@ h1 {
 .story-card:hover img {
     transform: scale(1.05); /* Slight zoom-in on hover */
 }
+
+/* Story card heading styles */
+.story-card h3 {
+    font-size: 20px; /* Adjusted to fit better */
+    font-weight: 700; /* Bold for prominence */
+    color: #333;
+    margin: 80px 20px; /* Adjusted spacing around the heading */
+    text-align: center; /* Centered text for better alignment */
+    line-height: 1.4;
+    height: auto; /* Allow dynamic height based on content */
+    overflow: hidden; /* Hide overflow text */
+    display: -webkit-box;
+    word-wrap: break-word; /* Break long words if needed */
+}
+
 
 /* Button styles */
 .story-card button {
@@ -923,6 +1022,11 @@ h1 {
         height: 200px;
     }
 }
+
+
+
+
+
 
 
 .container {
@@ -1129,67 +1233,70 @@ h1 {
 }
 
 
-
-
-
 /* Footer Styles */
 footer {
-    background: linear-gradient(135deg, #333, #555);
-    color: #fff;
-    padding: 50px 20px;
+    background-color: #f5f5f5; /* Light grey background for a subtle highlight */
+    color: #000000; /* Black text */
+    padding: 40px 10%;
     text-align: left;
-    border-top: 3px solid #f36f45;
+    border-top: 1px solid #cccccc; /* Light grey border */
     position: relative;
-    width: 100vw; /* Ensure footer spans the entire width */
-    box-sizing: border-box; /* Include padding in total width */
-    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Footer Content */
 .footer-content {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start; /* Aligns items to the top */
     flex-wrap: wrap;
-    width: 100%; /* Full width for the content */
+    max-width: 1400px;
     margin: 0 auto;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-sizing: border-box;
+    gap: 30px; /* Increased gap for more spacing between sections */
 }
 
 /* Footer Section */
 .footer-section {
-    flex: 1 1 220px; /* Make sections flexible */
-    margin-bottom: 30px;
-    padding: 0 15px; /* Add padding for spacing between sections */
-    box-sizing: border-box; /* Ensure padding is included in total width */
+    flex: 1 1 200px;
+    min-width: 180px;
+    box-sizing: border-box;
+}
+
+/* Logo Section */
+.footer-logo {
+    text-align: left;
+}
+
+.footer-logo img {
+    max-height: 115px; /* Increased height for better visibility */
+    width: auto;
+    margin-bottom: 10px; /* Increased margin for better spacing */
+}
+
+.footer-logo p {
+    font-size: 1rem; /* Slightly increased font size for better readability */
+    line-height: 1.8; /* Increased line height for more spacing */
+    color: #333333; /* Dark grey text for better readability */
+    margin: 0.5rem 0; /* Added margin for top and bottom spacing */
 }
 
 /* Footer Section Headings */
 .footer-section h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    color: #f36f45;
-    position: relative;
-}
-
-.footer-section h3::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background-color: #f36f45;
+    font-size: 1.2rem;
+    margin-bottom: 10px; /* Reduced margin for less congestion */
+    font-weight: 600;
+    color: #000000; /* Black headings */
 }
 
 /* Footer Text and Links */
 .footer-section p,
 .footer-section ul,
 .footer-section li {
-    color: #ccc;
-    font-size: 1rem;
-    line-height: 1.8;
+    color: #333333; /* Dark grey for the body text */
+    font-size: 0.95rem;
+    line-height: 1.8; /* Increased line height for readability */
 }
 
 .footer-section ul {
@@ -1198,119 +1305,64 @@ footer {
 }
 
 .footer-section a {
-    color: #ccc;
+    color: #000000; /* Black links */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-    color: #f36f45;
+    color: #555555; /* Slightly darker grey on hover */
 }
 
 /* Social Icons */
 .social-icons {
-    display: flex; /* Use flex to align social icons */
-    gap: 10px; /* Add spacing between icons */
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Increased gap for better spacing */
+    margin-top: 15px;
 }
 
 .social-icons a {
-    color: #ccc; /* Set color for social icons */
-    transition: color 0.3s ease; /* Smooth color change on hover */
+    color: #000000; /* Black icons */
+    font-size: 1.3rem;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #f36f45; /* Change color on hover */
-}
-
-/* Essential Links Section */
-.footer-section.links {
-    flex: 1 1 220px; /* Make sections flexible */
-}
-
-/* Essential Links Icons */
-.footer-section.links ul li {
-    display: flex; /* Align items in a row */
-    align-items: center; /* Center align items vertically */
-}
-
-.footer-section.links a {
-    display: flex; /* Align icon and text */
-    align-items: center; /* Center align items */
-    color: #ccc; /* Set text color */
-    transition: color 0.3s ease; /* Smooth color change on hover */
-}
-
-.footer-section.links a:hover {
-    color: #f36f45; /* Change color on hover */
-}
-
-.footer-section.links ul li i {
-    margin-right: 10px; /* Space between icon and text */
+    transform: scale(1.1);
+    color: #555555; /* Darker grey on hover for better visibility */
 }
 
 /* Footer Bottom */
 .footer-bottom {
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-top: 30px;
-    color: #bbb;
-}
-
-.footer-bottom a {
-    color: #f36f45;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-.footer-bottom a:hover {
-    color: #fff; /* Change color on hover */
-}
-
-/* Footer Background Gradient Effect */
-footer::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(243, 111, 69, 0.4), rgba(51, 51, 51, 0));
-    z-index: 0;
-    transform: translateX(-50%);
-}
-
-footer::after {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    right: 50%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(243, 111, 69, 0.4), rgba(51, 51, 51, 0));
-    z-index: 0;
-    transform: translateX(50%);
-}
-
-/* Adjust z-index for footer content */
-.footer-content,
-.footer-bottom {
-    position: relative;
-    z-index: 1;
+    color: #333333; /* Dark grey text for the bottom part */
+    padding-top: 10px;
+    border-top: 1px solid #cccccc; /* Consistent border with the footer */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .footer-section {
-        flex: 1 1 100%; /* Stack footer sections on smaller screens */
-        text-align: center; /* Center align text for mobile */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 5%;
     }
 
-    .footer-content {
-        padding-bottom: 30px; /* Adjust padding for smaller screens */
+    .footer-section {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        text-align: center;
+        margin-bottom: 20px;
     }
 
     .footer-bottom {
-        margin-top: 20px; /* Adjust margin for smaller screens */
+        margin-top: 20px;
     }
 }

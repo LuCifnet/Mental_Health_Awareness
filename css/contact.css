@@ -1,0 +1,297 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center;
+    padding: 10px 20px; /* Added padding for better spacing */
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+/* Logo styling */
+.logo {
+    flex: 0 0 auto; /* Prevents logo from stretching */
+}
+
+.logo img {
+    width: 100px; /* Reduced the size */
+    height: auto;
+    margin-right: 20px; /* Adds space from the right edge */
+}
+
+/* Navbar styling */
+nav {
+    flex: 1; /* Allows the nav to take the available space */
+    display: flex;
+    justify-content: center; /* Center align the navbar */
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Gap between nav items */
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none; /* No underline by default */
+    color: #333;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative; /* Make it relative for the pseudo-element */
+}
+
+/* Underline hover effect (unchanged) */
+nav ul li a.active::after,
+nav ul li a:hover::after {
+    content: ''; /* Pseudo-element for the underline */
+    position: absolute; /* Position it absolutely */
+    left: 0;
+    bottom: -2px; /* Adjust the position of the underline */
+    width: 100%;
+    height: 2px; /* Height of the underline */
+    background-color: #218838; /* Underline color */
+    transform: scaleX(1); /* Scale for the animation */
+    transition: transform 0.3s ease; /* Animation for the underline */
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1); /* Scale on hover */
+}
+
+nav ul li a.active::after {
+    transform: scaleX(1); /* Keep active underline visible */
+}
+
+/* Hide Sign-in and Sign-up Buttons */
+.sign-buttons {
+    display: none; /* Hide the sign-in and sign-up buttons */
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger 'close' icon style */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    nav ul.show {
+        transform: translateX(0); /* Show the menu when 'show' is added */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger menu on mobile */
+    }
+
+    .sign-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Container for the image and text */
+.container1 {
+    position: relative;
+    width: 100%; /* Full width of the container */
+    height: 50vh; /* Default height */
+    overflow: hidden; /* Hide overflow */
+}
+
+.image {
+    width: 100%; /* Cover the full width of the container */
+    height: 100%; /* Ensure the height fills the container */
+    object-fit: cover; /* Cover the container without distortion */
+    object-position: center; /* Center the image within the container */
+}
+
+.centered1 {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    color: white; /* Text color */
+    font-size: 5em; /* Adjust font size as needed */
+    text-align: center; /* Center text */
+    z-index: 1; /* Make sure the text is above the image */
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    .container1 {
+        height: 40vh; /* Reduce height on smaller screens for better visibility */
+    }
+
+    .image {
+        object-fit: cover; /* Ensure the image covers the container */
+        object-position: top; /* Adjust to focus on the top of the image */
+    }
+
+    .centered1 {
+        font-size: 2em; /* Reduce font size for smaller screens */
+        /* Optionally, you can also adjust margins for better positioning */
+    }
+}
+
+
+
+
+
+
+.contact-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact-header p {
+    font-size: 1.2em;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.contact-info {
+    flex: 1;
+    text-align: left;
+}
+
+.contact-info h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info img {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+.contact-form {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #004d40;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #00332c;
+}

@@ -1,0 +1,445 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center;
+    padding: 10px 20px; /* Added padding for better spacing */
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+/* Logo styling */
+.logo {
+    flex: 0 0 auto; /* Prevents logo from stretching */
+}
+
+.logo img {
+    width: 100px; /* Reduced the size */
+    height: auto;
+    margin-right: 20px; /* Adds space from the right edge */
+}
+
+/* Navbar styling */
+nav {
+    flex: 1; /* Allows the nav to take the available space */
+    display: flex;
+    justify-content: center; /* Center align the navbar */
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Gap between nav items */
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none; /* No underline by default */
+    color: #333;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative; /* Make it relative for the pseudo-element */
+}
+
+/* Underline hover effect (unchanged) */
+nav ul li a.active::after,
+nav ul li a:hover::after {
+    content: ''; /* Pseudo-element for the underline */
+    position: absolute; /* Position it absolutely */
+    left: 0;
+    bottom: -2px; /* Adjust the position of the underline */
+    width: 100%;
+    height: 2px; /* Height of the underline */
+    background-color: #218838; /* Underline color */
+    transform: scaleX(1); /* Scale for the animation */
+    transition: transform 0.3s ease; /* Animation for the underline */
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1); /* Scale on hover */
+}
+
+nav ul li a.active::after {
+    transform: scaleX(1); /* Keep active underline visible */
+}
+
+/* Hide Sign-in and Sign-up Buttons */
+.sign-buttons {
+    display: none; /* Hide the sign-in and sign-up buttons */
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger 'close' icon style */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    nav ul.show {
+        transform: translateX(0); /* Show the menu when 'show' is added */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger menu on mobile */
+    }
+
+    .sign-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Container for the image and text */
+.container1 {
+    position: relative;
+    width: 100%; /* Full width of the container */
+    height: 50vh; /* Default height */
+    overflow: hidden; /* Hide overflow */
+}
+
+.image {
+    width: 100%; /* Cover the full width of the container */
+    height: 100%; /* Ensure the height fills the container */
+    object-fit: cover; /* Cover the container without distortion */
+    object-position: center; /* Center the image within the container */
+}
+
+.centered1 {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    color: white; /* Text color */
+    font-size: 5em; /* Adjust font size as needed */
+    text-align: center; /* Center text */
+    z-index: 1; /* Make sure the text is above the image */
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    .container1 {
+        height: 40vh; /* Reduce height on smaller screens for better visibility */
+    }
+
+    .image {
+        object-fit: cover; /* Ensure the image covers the container */
+        object-position: top; /* Adjust to focus on the top of the image */
+    }
+
+    .centered1 {
+        font-size: 2em; /* Reduce font size for smaller screens */
+        /* Optionally, you can also adjust margins for better positioning */
+    }
+}
+
+
+/* Story Section */
+.story-section {
+    padding: 20px 0;
+    text-align: center; /* Center text in story section */
+}
+
+.story-section h2 {
+    font-size: 2.5em; /* Slightly larger title */
+    color: #333;
+    margin-bottom: 10px; /* Spacing below title */
+}
+
+.story-section p {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 800px; /* Limit paragraph width */
+    margin: 0 auto; /* Center paragraph */
+}
+
+/* Form Section */
+.form-section {
+    background-color: white;
+    padding: 40px; /* Increased padding for a better feel */
+    border-radius: 8px; /* Slightly rounder corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Centering the form */
+    max-width: 700px; /* Increased max width of the form */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-section:hover {
+    transform: translateY(-10px); /* Enhanced hover effect */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+.form-section h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.9em; /* Slightly increased font size */
+}
+
+/* Form Layout */
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form elements */
+}
+
+/* Label Styles */
+.form-section label {
+    font-size: 1.1em; /* Increased label font size */
+    color: #333;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Input and Textarea Styles */
+.form-section input,
+.form-section textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+/* Focus Styles */
+.form-section input:focus,
+.form-section textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Focus shadow */
+}
+
+/* Button Styles */
+.form-section button {
+    padding: 12px;
+    background-color: #004d40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Added box-shadow transition */
+}
+
+.form-section button:hover {
+    background-color: #004d40;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(174, 250, 172, 0.8); /* Add shadow on hover */
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .form-section {
+        padding: 30px; /* Adjusted padding for smaller screens */
+    }
+
+    .form-section h3 {
+        font-size: 1.6em; /* Decreased heading size for mobile */
+    }
+
+    .form-section input,
+    .form-section textarea {
+        padding: 10px; /* Adjust input padding */
+        font-size: 0.9em; /* Smaller font for mobile */
+    }
+
+    .form-section button {
+        font-size: 0.9em; /* Smaller button text */
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f5f5f5; /* Light grey background for a subtle highlight */
+    color: #000000; /* Black text */
+    padding: 40px 10%;
+    text-align: left;
+    border-top: 1px solid #cccccc; /* Light grey border */
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Footer Content */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns items to the top */
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    gap: 30px; /* Increased gap for more spacing between sections */
+}
+
+/* Footer Section */
+.footer-section {
+    flex: 1 1 200px;
+    min-width: 180px;
+    box-sizing: border-box;
+}
+
+/* Logo Section */
+.footer-logo {
+    text-align: left;
+}
+
+.footer-logo img {
+    max-height: 115px; /* Increased height for better visibility */
+    width: auto;
+    margin-bottom: 10px; /* Increased margin for better spacing */
+}
+
+.footer-logo p {
+    font-size: 1rem; /* Slightly increased font size for better readability */
+    line-height: 1.8; /* Increased line height for more spacing */
+    color: #333333; /* Dark grey text for better readability */
+    margin: 0.5rem 0; /* Added margin for top and bottom spacing */
+}
+
+/* Footer Section Headings */
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px; /* Reduced margin for less congestion */
+    font-weight: 600;
+    color: #000000; /* Black headings */
+}
+
+/* Footer Text and Links */
+.footer-section p,
+.footer-section ul,
+.footer-section li {
+    color: #333333; /* Dark grey for the body text */
+    font-size: 0.95rem;
+    line-height: 1.8; /* Increased line height for readability */
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section a {
+    color: #000000; /* Black links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #555555; /* Slightly darker grey on hover */
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Increased gap for better spacing */
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: #000000; /* Black icons */
+    font-size: 1.3rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    color: #555555; /* Darker grey on hover for better visibility */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 30px;
+    color: #333333; /* Dark grey text for the bottom part */
+    padding-top: 10px;
+    border-top: 1px solid #cccccc; /* Consistent border with the footer */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 5%;
+    }
+
+    .footer-section {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+    }
+}

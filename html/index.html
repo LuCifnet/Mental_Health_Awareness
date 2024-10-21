@@ -6,21 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Health</title>
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/script.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <!-- Consider adding a descriptive text for accessibility and SEO -->
+            
             <img src="/images/Inner Calm (1).png" alt="Inner Calm Logo" class="logo-img">
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#" class="active"><i class="fas fa-home"> </i>Home</a></li>
-                <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="/html/index.html" class="active"><i class="fas fa-home"> </i>Home</a></li>
+                <li><a href="/html/contact.html"><i class="fas fa-info-circle"></i> About Us</a></li>
                 <li><a href="#"><i class="fas fa-book"></i> Resources</a></li>
                 <li><a href="#"><i class="fas fa-hands-helping"></i> Support Services</a></li>
                 <li><a href="#"><i class="fas fa-heart"></i> Self-Assessment</a></li>
@@ -31,6 +30,11 @@
         <div class="auth-buttons">
             <a href="/html/login.html" class="sign-in">Sign In</a>
             <a href="#" class="sign-up">Sign Up</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
     </header>
 
@@ -63,8 +67,8 @@
                 </div>
                 <div class="text-section">
                     <h1>You Deserve to be Mentally Healthy</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquet habitasse nunc elementum
-                        mattis est neque ipsum. Varius aliquet dignissim.</p>
+                    <p>Taking care of your mind is just as important as taking care of your body. It’s okay to take a
+                        step back, breathe, and prioritize yourself.</p>
                     <a href="#" class="button">Get Started</a>
                 </div>
             </div>
@@ -135,13 +139,15 @@
                     <img src="/images/happy-children-playing-and-laughing-concept-for-ki-2022-11-10-18-37-53-utc.jpg"
                         alt="Children Service">
                     <h2>Children Service</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur. Convallis est urna adipiscing fringilla nulla.</p>
+                    <p>Every child deserves a nurturing environment. Mental health awareness is vital for their
+                        emotional well-being and resilience.</p>
                     <button>See Detail</button>
                 </div>
                 <div class="service">
                     <img src="/images/service-detail.jpg" alt="Mental Counseling">
                     <h2>Mental Counseling</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur. Convallis est urna adipiscing fringilla nulla.</p>
+                    <p>Mental counseling provides essential support for emotional well-being. It helps individuals
+                        navigate challenges, fostering resilience.</p>
                     <button>See Detail</button>
                 </div>
             </div>
@@ -159,15 +165,20 @@
                 <div class="story-thumbnails">
                     <div class="story-card">
                         <img src="/images/story1.jpg" alt="Story Thumbnail 1">
+                        <h3>How I Dealt With Maladaptive Daydreaming : Riya</h3>
                         <button>Read Story</button>
                     </div>
                     <div class="story-card">
                         <img src="/images/story2.jpg" alt="Story Thumbnail 2">
+                        <h3>“Listen To Your Heart, Follow Your Passion” – Sarang, 30</h3>
                         <button>Read Story</button>
+                        
                     </div>
                     <div class="story-card">
                         <img src="/images/story3.jpg" alt="Story Thumbnail 3">
+                        <h3>My Journey from Nothing to Everything</h3>
                         <button>Read Story</button>
+                        
                     </div>
                 </div>
             </section>
@@ -184,92 +195,86 @@
                         <p>Motivate and uplift others through your stories. Your personal narratives can become a beacon
                             of hope, resilience, and courage in the twilight of stormy seas and inspire them to come out
                             stronger and braver.</p>
-                        <button>Write Your story</button>
+                        <a href="/html/write_your_story.html" class="cta-button">
+                            <button>Write Your Story</button>
+                        </a>
                     </div>
                 </div>
+
 
                 <!-- Therapy Resources Section -->
                 <section class="therapy-resources">
                     <h2>Therapy Resources</h2>
-                    <p>Calm Sage aims to provide therapy resources to help you find effective solutions to mental health
-                        struggles such as anxiety, depression, stress, and more. Help is just a click away!</p>
+                    <p>Our website aims to provide therapy resources to help you find effective solutions to mental
+                        health struggles such as anxiety, depression, stress, and more. Help is just a click away!</p>
 
                     <!-- Resource Grid with Images -->
                     <div class="resource-grid">
                         <div class="resource-card">
                             <img src="/images/therapy1.jpg" alt="Resource 1" class="resource-image">
-                            <p>Resource 1</p>
+                            <p>9 Best Online Therapy for Teens To Protect Their Mental Health</p>
                         </div>
                         <div class="resource-card">
                             <img src="/images/therapy2.webp" alt="Resource 2" class="resource-image">
-                            <p>Resource 2</p>
+                            <p>Confidentiality And Therapy: What To Know?</p>
                         </div>
                         <div class="resource-card">
                             <img src="/images/ther3.png" alt="Resource 3" class="resource-image">
-                            <p>Resource 3</p>
+                            <p>Breakup Therapy: Reasons Why Therapy Can Help After a Breakup</p>
                         </div>
                         <div class="resource-card">
                             <img src="/images/ther4.jpg" alt="Resource 4" class="resource-image">
-                            <p>Resource 4</p>
+                            <p>Guide-Me: What Is Supportive-Expressive Therapy?</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- Footer -->
                 <footer>
                     <div class="footer-content">
-                        <div class="footer-section logo">
-                            <h3>Logo</h3>
-                            <p>Our vision is to provide convenience and help increase your sales business.</p>
-                            <div class="social-icons">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div>
+                        <div class="footer-section footer-logo">
+                            <img src="/images/Inner Calm (1).png" alt="Mindfulcare Logo">
+                            <p>Find support for anxiety, depression, and stress help is just a click away!</p>
                         </div>
-                        <div class="footer-section about">
-                            <h3>About</h3>
+                        <div class="footer-section">
+                            <h3>Services</h3>
                             <ul>
-                                <li><a href="#">How it works</a></li>
-                                <li><a href="#">Featured</a></li>
+                                <li><a href="#">Mental Counseling</a></li>
                             </ul>
                         </div>
-                        <div class="footer-section contact">
-                            <h3>Contact Us</h3>
+                        <div class="footer-section">
+                            <h3>Contact</h3>
+                            <p><i class="fa fa-phone"></i> +9779840889988</p>
+                            <p><i class="fa fa-envelope"></i> rokayakapil100@gmail.com</p>
+                            <p><i class="fa fa-map-marker"></i> Machapokhari, Kathmandu</p>
+                        </div>
+                        <div class="footer-section">
+                            <h3>Links</h3>
                             <ul>
-                                <li>+977865555547</li>
-                                <li>Kathmandu</li>
-                                <li>Kapil12@gmail.com</li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Term Of Use</a></li>
                             </ul>
                         </div>
-                        <div class="footer-section community">
-                            <h3>Community</h3>
-                            <ul>
-                                <li><a href="#">Blog</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-section socials">
-                            <h3>Socials</h3>
-                            <ul>
-                                <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-section links">
-                            <h3>Essential Links</h3>
-                            <ul>
-                                <li><a href="#"><i class="fas fa-user-shield"></i> Privacy Policy</a></li>
-                                <li><a href="#"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
-                            </ul>
+                        <div class="footer-section">
+                            <h3>Maps</h3>
+                            <iframe
+                                src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4042.7971339323767!2d85.32101341142905!3d27.708847925325205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1908ed7fbacd%3A0x49b04b284da7a96f!2sIIMS%20College!5e1!3m2!1sen!2snp!4v1729440780403!5m2!1sen!2snp"
+                                width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                     <div class="footer-bottom">
-                        <p>©2022 Company Name. All rights reserved</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                        <p>Copyright 2023 ©Dharma Labs All Right Reserved</p>
                     </div>
                 </footer>
 
             </main>
+            <script src="/js/script.js"></script>
 </body>
 
 </html>
