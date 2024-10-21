@@ -63,6 +63,14 @@ nav ul li a {
     border-radius: 4px;
     transition: all 0.3s ease;
     position: relative; /* Make it relative for the pseudo-element */
+    display: flex;
+    align-items: center; /* Align the icon and text vertically */
+}
+
+/* Adjust space between icon and text */
+nav ul li a i {
+    margin-right: 8px; /* Adds space between icon and text */
+    font-size: 1.2em; /* Adjust size if needed */
 }
 
 /* Underline hover effect (unchanged) */
@@ -86,6 +94,7 @@ nav ul li a:hover::after {
 nav ul li a.active::after {
     transform: scaleX(1); /* Keep active underline visible */
 }
+
 
 /* Hide Sign-in and Sign-up Buttons */
 .sign-buttons {
@@ -150,48 +159,105 @@ nav ul li a.active::after {
     }
 }
 
-/* Container for the image and text */
-.container1 {
-    position: relative;
-    width: 100%; /* Full width of the container */
-    height: 50vh; /* Default height */
-    overflow: hidden; /* Hide overflow */
+
+/* Contact Section Container */
+.contact-section {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    background: linear-gradient(135deg, #00796b, #004d40); /* Green gradient background */
+    padding: 40px 20px; /* Add some padding around */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    height: 50vh;
+    text-align: left; /* Align text to the left */
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for the animation */
 }
 
-.image {
-    width: 100%; /* Cover the full width of the container */
-    height: 100%; /* Ensure the height fills the container */
-    object-fit: cover; /* Cover the container without distortion */
-    object-position: center; /* Center the image within the container */
+/* Vertical Line */
+.line {
+    width: 4px; /* Thickness of the vertical line */
+    height: 150px; /* Adjust the height */
+    background-color: white; /* Line color */
+    margin-right: 20px; /* Space between the line and text */
 }
 
-.centered1 {
-    position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for centering */
-    color: white; /* Text color */
-    font-size: 5em; /* Adjust font size as needed */
-    text-align: center; /* Center text */
-    z-index: 1; /* Make sure the text is above the image */
+/* Contact Content */
+.contact-content {
+    /* Add styles to ensure proper layout of content */
+    display: flex; /* Use flex to layout heading and paragraph */
+    flex-direction: column; /* Stack heading and paragraph vertically */
 }
 
-/* Responsive Styles for Mobile */
+.contact-content h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.contact-content p {
+    font-size: 1.1em;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
-    .container1 {
-        height: 40vh; /* Reduce height on smaller screens for better visibility */
+    .contact-section {
+        height: auto; /* Allow height to adjust based on content */
+        padding: 20px; /* Reduce padding on smaller screens */
+        flex-direction: column; /* Stack items vertically on small screens */
+        text-align: center; /* Center text on small screens */
     }
 
-    .image {
-        object-fit: cover; /* Ensure the image covers the container */
-        object-position: top; /* Adjust to focus on the top of the image */
+    .line {
+        height: 80px; /* Adjust height for the vertical line */
+        margin: 10px 0; /* Reduce margin for smaller screens */
     }
 
-    .centered1 {
-        font-size: 2em; /* Reduce font size for smaller screens */
-        /* Optionally, you can also adjust margins for better positioning */
+    .contact-content h1 {
+        font-size: 2em; /* Reduce font size for heading */
+    }
+
+    .contact-content p {
+        font-size: 1em; /* Reduce font size for paragraph */
     }
 }
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 15px; /* Further reduce padding on very small screens */
+    }
+
+    .contact-content h1 {
+        font-size: 1.8em; /* Further reduce heading font size */
+    }
+
+    .contact-content p {
+        font-size: 0.9em; /* Further reduce paragraph font size */
+    }
+}
+
+/* Animation for when the contact section comes into view */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add this class to trigger the animation */
+.contact-section.visible {
+    opacity: 1; /* Make visible */
+    animation: fadeInUp 0.5s forwards; /* Trigger animation */
+}
+
+
 
 
 
