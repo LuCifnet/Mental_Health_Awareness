@@ -1,0 +1,135 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Style the form container */
+.form-container {
+    width: 90%;
+    max-width: 1000px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Form sections */
+.signin-page {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.signin-page__left,
+.signin-page__right {
+    width: 50%; /* Flex 50% for left and right */
+    padding: 30px;
+    background-color: #fff;
+}
+
+.signin-page__left {
+    background-color: #d3e4ff; /* Soft blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-page__right {
+    background-color: #fff;
+}
+
+.signin-page__title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.signin-page__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signin-page__input-group {
+    margin-bottom: 20px;
+}
+
+.signin-page__input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.signin-page__input:focus {
+    border-color: #d27146;
+    outline: none;
+    box-shadow: 0 0 5px rgba(210, 113, 70, 0.3);
+}
+
+.signin-page__button {
+    background-color: #d27146;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.signin-page__button:hover {
+    background-color: #b95f3d;
+    transform: scale(1.05);
+}
+
+.signin-page__signup-button {
+    background-color: #d27146;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.signin-page__signup-button:hover {
+    background-color: #b95f3d;
+    transform: scale(1.05);
+}
+
+.welcome-box {
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .signin-page__left, .signin-page__right {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .form-container {
+        flex-direction: column;
+    }
+
+    .signin-page__button, .signin-page__signup-button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Section</title>
+    <link rel="stylesheet" href="css\login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+</head>
+<body>
+    <div class="form-container">
+        <div class="signin-page">
+            <div class="signin-page__left">
+                <h1 class="signin-page__title">Signin</h1>
+                <form class="signin-page__form">
+                    <div class="signin-page__input-group">
+                        <input
+                            type="text"
+                            class="signin-page__input"
+                            placeholder="Username"
+                        />
+                    </div>
+                    <div class="signin-page__input-group">
+                        <input
+                            type="password"
+                            class="signin-page__input"
+                            placeholder="Password"
+                        />
+                        <button
+                            type="button"
+                            class="signin-page__toggle-password"
+                        ></button>
+                    </div>
+                    <a href="index.html" class="signin-page__button-link">
+                        <button type="button" class="signin-page__button">
+                            Signin
+                        </button>
+                    </a>
+                    
+                    
+                </form>
+                <div class="signin-page__social-login">
+                    <p>or sign in with</p>
+                    <button class="social-button facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+                    <button class="social-button google"><i class="fab fa-google"></i> Google</button>
+                </div>
+            </div>
+            <div class="signin-page__right">
+                <div class="welcome-box">
+                    <h2 class="signin-page__welcome-title">Welcome back!</h2>
+                    <p class="signin-page__message">
+                        We're so glad to see you again. We hope you've been
+                        taking care of yourself and are feeling safe and well.
+                    </p>
+                    <button
+                        class="signin-page__signup-button"
+                        onclick="navigateToPage()"
+                    >
+                        No account yet? Create one.
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function navigateToPage() {
+            window.location.href = "register.html";
+        }
+    </script>
+</body>
+</html>

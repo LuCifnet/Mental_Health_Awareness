@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.form-container {
+    width: 100%; /* Increased from 80% */
+    max-width: 1300px; /* Increased from 800px */
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+    height: 600px;
+}
+
+.signin-page {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.signin-page__left,
+.signin-page__right {
+    width: 100%;
+    padding: 30px;
+    background-color: #fff;
+    flex: 1;
+}
+
+.signin-page__left {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signin-page__title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideIn 0.6s ease forwards;
+}
+
+.signin-page__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signin-page__input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.signin-page__input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.signin-page__input:focus {
+    border-color: #d27146;
+    outline: none;
+    box-shadow: 0 0 5px rgba(210, 113, 70, 0.3);
+}
+
+
+/* Link styling (to remove default link styles) */
+.signin-page__button-link {
+    text-decoration: none;
+    display: inline-block; /* Ensure the link behaves like a block-level element */
+}
+
+/* Button styling */
+.signin-page__button {
+    background-color: #d27146;
+    color: white;
+    padding: 12px 24px; /* Increased padding for better button appearance */
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0; /* Remove margin to eliminate gap */
+    width: 100%; /* Set to 100% width or specify a specific value, e.g., 300px */
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center; /* Center text inside the button */
+    display: inline-block; /* Ensure the button size is appropriate */
+}
+
+/* Hover effect */
+.signin-page__button:hover {
+    background-color: #b9603d; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight upward movement */
+}
+
+/* Active (pressed) effect */
+.signin-page__button:active {
+    background-color: #a35435; /* Even darker shade on click */
+    transform: translateY(0); /* Reset movement on press */
+}
+
+/* Focus state for accessibility */
+.signin-page__button:focus {
+    outline: 2px solid #f5a25d; /* Outline to indicate focus */
+    outline-offset: 3px;
+}
+
+/* Disabled state */
+.signin-page__button:disabled {
+    background-color: #e0e0e0;
+    color: #888;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+
+.signin-page__social-login {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-button {
+    background-color: #3b5998;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-button.google {
+    background-color: #db4437;
+}
+
+.social-button:hover {
+    transform: scale(1.05);
+    background-color: darken(#3b5998, 10%);
+}
+
+.signin-page__right {
+    background-color: #d3e4ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-box {
+    text-align: center;
+    animation: slideIn 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.signin-page__welcome-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.signin-page__message {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #6b6b6b;
+}
+
+.signin-page__signup-button {
+    background-color: #d27146;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.signin-page__signup-button:hover {
+    background-color: #b95f3d;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .signin-page__left, .signin-page__right {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .form-container {
+        flex-direction: column;
+    }
+
+    .signin-page__button, .signin-page__signup-button {
+        width: 100%;
+    }
+}
