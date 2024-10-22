@@ -76,7 +76,7 @@ body {
 }
 
 .signin-page__input:focus {
-    border-color: #d27146;
+    border-color:#004d40;
     outline: none;
     box-shadow: 0 0 5px rgba(210, 113, 70, 0.3);
 }
@@ -90,7 +90,7 @@ body {
 
 /* Button styling */
 .signin-page__button {
-    background-color: #d27146;
+    background-color: #004d40;
     color: white;
     padding: 12px 24px; /* Increased padding for better button appearance */
     font-size: 16px;
@@ -107,19 +107,19 @@ body {
 
 /* Hover effect */
 .signin-page__button:hover {
-    background-color: #b9603d; /* Darker shade on hover */
+    background-color: #004d40; /* Darker shade on hover */
     transform: translateY(-2px); /* Slight upward movement */
 }
 
 /* Active (pressed) effect */
 .signin-page__button:active {
-    background-color: #a35435; /* Even darker shade on click */
+    background-color: #004d40; /* Even darker shade on click */
     transform: translateY(0); /* Reset movement on press */
 }
 
 /* Focus state for accessibility */
 .signin-page__button:focus {
-    outline: 2px solid #f5a25d; /* Outline to indicate focus */
+    outline: 2px solid #004d40; /* Outline to indicate focus */
     outline-offset: 3px;
 }
 
@@ -151,7 +151,7 @@ body {
 }
 
 .social-button.google {
-    background-color: #db4437;
+    background-color: #004d40;
 }
 
 .social-button:hover {
@@ -186,7 +186,7 @@ body {
 }
 
 .signin-page__signup-button {
-    background-color: #d27146;
+    background-color: #004d40;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -197,7 +197,7 @@ body {
 }
 
 .signin-page__signup-button:hover {
-    background-color: #b95f3d;
+    background-color: #004d40;
     transform: scale(1.05);
 }
 
