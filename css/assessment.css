@@ -159,6 +159,7 @@ nav ul li a.active::after {
     }
 }
 
+
 /* Contact Section Container */
 .contact-section {
     display: flex;
@@ -256,110 +257,250 @@ nav ul li a.active::after {
     animation: fadeInUp 0.5s forwards; /* Trigger animation */
 }
 
-
-
-
-
-
-
-
-.contact-wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+/* Contact Section Container */
+.contact-section {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    background: linear-gradient(135deg, #00796b, #004d40); /* Green gradient background */
+    padding: 40px 20px; /* Add some padding around */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    height: 50vh;
+    text-align: left; /* Align text to the left */
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for the animation */
 }
 
-.contact-header h1 {
+/* Vertical Line */
+.line {
+    width: 4px; /* Thickness of the vertical line */
+    height: 150px; /* Adjust the height */
+    background-color: white; /* Line color */
+    margin-right: 20px; /* Space between the line and text */
+}
+
+/* Contact Content */
+.contact-content {
+    /* Add styles to ensure proper layout of content */
+    display: flex; /* Use flex to layout heading and paragraph */
+    flex-direction: column; /* Stack heading and paragraph vertically */
+}
+
+.contact-content h1 {
     font-size: 2.5em;
+    font-weight: bold;
+    color: white;
     margin-bottom: 10px;
-    color: #333;
 }
 
-.contact-header p {
-    font-size: 1.2em;
-    color: #777;
-    margin-bottom: 30px;
-}
-
-.contact-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.contact-info {
-    flex: 1;
-    text-align: left;
-}
-
-.contact-info h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.contact-info p {
+.contact-content p {
     font-size: 1.1em;
-    color: #555;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
+    color: white;
+    line-height: 1.6;
 }
 
-.contact-info i {
-    margin-right: 10px;
-    font-size: 1.2em; /* Adjust the size of the icon */
-    color: #555; /* Ensure the icon color matches the text */
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .contact-section {
+        height: auto; /* Allow height to adjust based on content */
+        padding: 20px; /* Reduce padding on smaller screens */
+        flex-direction: column; /* Stack items vertically on small screens */
+        text-align: center; /* Center text on small screens */
+    }
+
+    .line {
+        height: 80px; /* Adjust height for the vertical line */
+        margin: 10px 0; /* Reduce margin for smaller screens */
+    }
+
+    .contact-content h1 {
+        font-size: 2em; /* Reduce font size for heading */
+    }
+
+    .contact-content p {
+        font-size: 1em; /* Reduce font size for paragraph */
+    }
 }
 
-.contact-form {
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 15px; /* Further reduce padding on very small screens */
+    }
+
+    .contact-content h1 {
+        font-size: 1.8em; /* Further reduce heading font size */
+    }
+
+    .contact-content p {
+        font-size: 0.9em; /* Further reduce paragraph font size */
+    }
+}
+
+/* Animation for when the contact section comes into view */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add this class to trigger the animation */
+.contact-section.visible {
+    opacity: 0; /* Make visible */
+    animation: fadeInUp 0.5s forwards; /* Trigger animation */
+}
+
+
+
+/* Quiz Section Styling */
+.quiz-section {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  .quiz-header-image {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-}
-
-.form-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.form-group label {
-    font-size: 1em;
+    margin-bottom: 3rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .quiz-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
     color: #333;
-    margin-bottom: 5px;
-    display: block;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .quiz-section p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Quiz Cards Grid */
+  .quiz-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem; /* Increased spacing between cards */
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  /* Quiz Card Styling */
+  .quiz-card {
+    background: #fff;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-.contact-form button {
-    width: 100%;
-    padding: 10px 0;
-    background-color: #004d40;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 1.5rem; /* Added padding for a more spacious feel */
+  }
+  
+  .quiz-card img {
+    width: 80%; /* Reduced image size for a balanced layout */
+    max-height: 200px;
+    object-fit: contain;
+    margin: 0 auto 1rem; /* Centered and added spacing below image */
+    border-radius: 10px;
+  }
+  
+  .quiz-card p {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .quiz-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    background-color: #00796b;
     color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-}
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .quiz-card a:hover {
+    background-color: #388e3c;
+    transform: scale(1.1); /* Slightly larger on hover */
+  }
+  
+  /* Hover Effects */
+  .quiz-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .quiz-card:hover img {
+    filter: brightness(1.1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .quiz-section {
+      padding: 1.5rem 1rem;
+    }
+  
+    .quiz-header-image {
+      max-height: 200px;
+    }
+  
+    .quiz-section h2 {
+      font-size: 2rem;
+    }
+  
+    .quiz-section p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  
+    .quiz-card {
+      padding: 1rem;
+    }
+  
+    .quiz-card p {
+      font-size: 1rem;
+    }
+  
+    .quiz-card img {
+      width: 90%;
+    }
+  
+    .quiz-card a {
+      padding: 0.5rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+  
 
-.contact-form button:hover {
-    background-color: #00332c;
-}
+
+
+
+
+
+
+
+
+
 
 
 

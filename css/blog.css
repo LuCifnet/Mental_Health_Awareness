@@ -159,6 +159,7 @@ nav ul li a.active::after {
     }
 }
 
+
 /* Contact Section Container */
 .contact-section {
     display: flex;
@@ -256,110 +257,351 @@ nav ul li a.active::after {
     animation: fadeInUp 0.5s forwards; /* Trigger animation */
 }
 
-
-
-
-
-
-
-
-.contact-wrapper {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+/* Contact Section Container */
+.contact-section {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    background: linear-gradient(135deg, #00796b, #004d40); /* Green gradient background */
+    padding: 40px 20px; /* Add some padding around */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    height: 50vh;
+    text-align: left; /* Align text to the left */
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for the animation */
 }
 
-.contact-header h1 {
+/* Vertical Line */
+.line {
+    width: 4px; /* Thickness of the vertical line */
+    height: 150px; /* Adjust the height */
+    background-color: white; /* Line color */
+    margin-right: 20px; /* Space between the line and text */
+}
+
+/* Contact Content */
+.contact-content {
+    /* Add styles to ensure proper layout of content */
+    display: flex; /* Use flex to layout heading and paragraph */
+    flex-direction: column; /* Stack heading and paragraph vertically */
+}
+
+.contact-content h1 {
     font-size: 2.5em;
+    font-weight: bold;
+    color: white;
     margin-bottom: 10px;
-    color: #333;
 }
 
-.contact-header p {
-    font-size: 1.2em;
-    color: #777;
-    margin-bottom: 30px;
-}
-
-.contact-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.contact-info {
-    flex: 1;
-    text-align: left;
-}
-
-.contact-info h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.contact-info p {
+.contact-content p {
     font-size: 1.1em;
-    color: #555;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
+    color: white;
+    line-height: 1.6;
 }
 
-.contact-info i {
-    margin-right: 10px;
-    font-size: 1.2em; /* Adjust the size of the icon */
-    color: #555; /* Ensure the icon color matches the text */
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .contact-section {
+        height: auto; /* Allow height to adjust based on content */
+        padding: 20px; /* Reduce padding on smaller screens */
+        flex-direction: column; /* Stack items vertically on small screens */
+        text-align: center; /* Center text on small screens */
+    }
+
+    .line {
+        height: 80px; /* Adjust height for the vertical line */
+        margin: 10px 0; /* Reduce margin for smaller screens */
+    }
+
+    .contact-content h1 {
+        font-size: 2em; /* Reduce font size for heading */
+    }
+
+    .contact-content p {
+        font-size: 1em; /* Reduce font size for paragraph */
+    }
 }
 
-.contact-form {
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 15px; /* Further reduce padding on very small screens */
+    }
+
+    .contact-content h1 {
+        font-size: 1.8em; /* Further reduce heading font size */
+    }
+
+    .contact-content p {
+        font-size: 0.9em; /* Further reduce paragraph font size */
+    }
 }
 
-.form-group {
-    margin-bottom: 15px;
-    text-align: left;
+/* Animation for when the contact section comes into view */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.form-group label {
-    font-size: 1em;
+/* Add this class to trigger the animation */
+.contact-section.visible {
+    opacity: 0; /* Make visible */
+    animation: fadeInUp 0.5s forwards; /* Trigger animation */
+}
+
+
+/* Blog Section */
+.blogs-section {
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .blogs-section__subtitle {
+    font-size: 1.5rem;
+    color: #4caf50;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .blogs-section__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
     color: #333;
-    margin-bottom: 5px;
-    display: block;
-}
-
-.form-group input,
-.form-group textarea {
+    line-height: 1.4;
+  }
+  
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .blog-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .blog-card__image {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .blog-card:hover .blog-card__image {
+    transform: scale(1.1);
+  }
+  
+  .blog-card__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1rem 1rem 0.5rem;
+    color: #222;
+  }
+  
+  .blog-card__description {
+    font-size: 1rem;
+    margin: 0 1rem 1rem;
+    color: #666;
+  }
+  
+  .blog-card__link {
+    display: inline-block;
+    margin: 0 1rem 1.5rem;
+    font-weight: 700;
+    color: #4caf50;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: 2px solid #4caf50;
     border-radius: 5px;
-    font-size: 1em;
-}
-
-.contact-form button {
-    width: 100%;
-    padding: 10px 0;
-    background-color: #004d40;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .blog-card__link:hover {
+    background: #4caf50;
     color: #fff;
+  }
+  
+  /* Newsletter Section */
+  .newsletter {
+    background: linear-gradient(to right, #00796b, #81c784);
+    padding: 3rem 1rem;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .newsletter__title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .newsletter__description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  .newsletter__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .newsletter__input {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    outline: none;
+  }
+  
+  .newsletter__input::placeholder {
+    color: #aaa;
+  }
+  
+  .newsletter__button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    color: #4caf50;
+    background: #fff;
     border: none;
     border-radius: 5px;
-    font-size: 1em;
     cursor: pointer;
-}
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .newsletter__button:hover {
+    background: #388e3c;
+    color: #fff;
+  }
+  
+  /* Testimonials Section */
+  .testimonials {
+    padding: 3rem 0;
+    background: #f4f4f4;
+  }
+  
+  .testimonials__info {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .testimonials__subtitle {
+    font-size: 1.5rem;
+    color: #4caf50;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  .testimonials__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #333;
+    line-height: 1.3;
+  }
+  
+  .testimonials__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .testimonial-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .testimonial-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .testimonial-card__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  
+  .testimonial-card span {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #4caf50;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .blogs-section__title,
+    .newsletter__title,
+    .testimonials__title {
+      font-size: 2rem;
+    }
+  
+    .newsletter__description {
+      font-size: 0.9rem;
+    }
+  
+    .blog-card {
+      padding: 1rem;
+    }
+  
+    .testimonials__cards {
+      gap: 1rem;
+    }
+  }
+  
 
-.contact-form button:hover {
-    background-color: #00332c;
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
