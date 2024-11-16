@@ -61,7 +61,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #218838;
+ 
     background-color: #f0f0f0;
 }
 
@@ -867,7 +867,7 @@ h1 {
 }
 
 .service button {
-    background-color: #ff6b6b;
+    background-color: #218838;
     color: white;
     border: none;
     padding: 12px 25px; /* Increased padding */
@@ -966,7 +966,7 @@ h1 {
 /* Button styles */
 .story-card button {
     width: 100%;
-    background-color: #f36f45;
+    background-color: #218838;
     color: #fff;
     border: none;
     padding: 18px 0;

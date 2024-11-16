@@ -42,7 +42,7 @@ body {
 }
 
 .signin-page__left {
-    background-color: #d3e4ff; /* Soft blue */
+    background-color: #f2f2f2; /* Soft blue */
     display: flex;
     justify-content: center;
     align-items: center;
