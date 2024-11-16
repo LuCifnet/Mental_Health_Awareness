@@ -638,6 +638,9 @@ main {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 5px;
+    display: block; /* Ensure it is a block-level element for the <a> */
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit the text color from the parent */
 }
 
 .issue-card:hover {
@@ -664,7 +667,7 @@ main {
 
 /* Navigation Buttons */
 .navigation-buttons {
-    margin:  20px 0;
+    margin: 20px 0;
 }
 
 .prev-btn, .next-btn {
@@ -681,6 +684,7 @@ main {
     background-color: #0056b3;
     transform: scale(1.05);
 }
+
 
 /* Quiz Section */
 .quiz-section {
@@ -883,28 +887,27 @@ h1 {
     transform: scale(1.05); /* Slight scaling effect on hover */
 }
 
-
-
 /* General section styles */
 .stories-section {
     text-align: center;
     padding: 60px 20px;
     background-color: #f9f9f9;
     width: 100vw;
+    box-sizing: border-box; /* Ensure padding does not affect overall width */
 }
 
 .section-title {
     font-size: 40px;
     font-weight: 700;
     color: #222;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Increased space below title */
     letter-spacing: 1px;
 }
 
 .section-description {
     font-size: 20px;
     color: #555;
-    margin-bottom: 50px;
+    margin-bottom: 60px; /* Increased space below description */
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -916,7 +919,7 @@ h1 {
     display: flex;
     flex-wrap: wrap; /* Ensure items wrap on smaller screens */
     justify-content: center;
-    gap: 30px;
+    gap: 40px; /* Increased gap between the cards */
 }
 
 /* Story card styles */
@@ -928,6 +931,7 @@ h1 {
     width: 350px; /* Increased card width */
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 40px; /* Increased bottom margin for spacing between cards */
 }
 
 .story-card:hover {
@@ -953,7 +957,7 @@ h1 {
     font-size: 20px; /* Adjusted to fit better */
     font-weight: 700; /* Bold for prominence */
     color: #333;
-    margin: 80px 20px; /* Adjusted spacing around the heading */
+    margin: 20px 20px 40px 20px; /* Reduced space at the bottom to keep the button closer */
     text-align: center; /* Centered text for better alignment */
     line-height: 1.4;
     height: auto; /* Allow dynamic height based on content */
@@ -962,9 +966,8 @@ h1 {
     word-wrap: break-word; /* Break long words if needed */
 }
 
-
-/* Button styles */
-.story-card button {
+/* Read Story button styles */
+.read-story-button {
     width: 100%;
     background-color: #218838;
     color: #fff;
@@ -978,9 +981,11 @@ h1 {
     left: 0;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
 }
 
-.story-card button:hover {
+.read-story-button:hover {
     background-color: #d65a37;
 }
 
@@ -1005,13 +1010,13 @@ h1 {
         width: 300px;
     }
     .story-card img {
-        height: 200px;
+        height: 220px;
     }
 }
 
 @media (max-width: 768px) {
     .story-thumbnails {
-        gap: 20px;
+        gap: 30px; /* Slightly reduced gap for medium screens */
     }
     .story-card {
         width: 100%; /* Full width on small screens */
@@ -1037,6 +1042,9 @@ h1 {
         height: 200px;
     }
 }
+
+
+
 
 
 
